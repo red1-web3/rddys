@@ -1,9 +1,10 @@
 import React from "react";
 import { BiSearch } from "react-icons/bi";
+import SideModal from "./SideModal";
 
 function Search() {
   return (
-    <>
+    <SideModal>
       <h2 className="pb-3 uppercase border-b border-primary-black w-full font-black text-primary-black text-[22px] leading-[22px]">
         Search
       </h2>
@@ -18,7 +19,7 @@ function Search() {
           <BiSearch />
         </span>
       </div>
-    </>
+    </SideModal>
   );
 }
 

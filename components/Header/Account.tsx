@@ -2,11 +2,12 @@ import classNames from "classnames";
 import { useActiveForm } from "context";
 import Link from "next/link";
 import React from "react";
+import SideModal from "./SideModal";
 
 function Account() {
   const [activeForm, setActiveForm] = useActiveForm();
   return (
-    <>
+    <SideModal>
       <h2 className="pb-3 uppercase border-b border-primary-black w-full font-black text-primary-black text-[22px] leading-[22px]">
         Account
       </h2>
@@ -38,7 +39,7 @@ function Account() {
           SignUp
         </button>
       </div>
-    </>
+    </SideModal>
   );
 }
 

@@ -15,9 +15,8 @@ function Header() {
           <AsideRight />
         </main>
 
-        <RightSideModal>
-          {listedOptions[headerActiveListModal as any].component}
-        </RightSideModal>
+        {headerActiveListModal !== null &&
+          listedOptions[headerActiveListModal as any].component}
       </div>
     </header>
   );
@@ -56,7 +55,9 @@ function AsideRight() {
       <ul className="flex items-center gap-x-2.5">
         {listedOptions.map(({ icon }, i) => (
           <li
-            onClick={() => setHeaderActiveListModal(i)}
+            onClick={() =>
+              setHeaderActiveListModal((prev) => (prev === i ? null : i))
+            }
             key={i}
             className="text-xl"
           >
@@ -67,21 +68,5 @@ function AsideRight() {
         ))}
       </ul>
     </aside>
-  );
-}
-
-function RightSideModal({
-  children,
-  isOpen,
-}: {
-  children?: ReactNode;
-  isOpen?: boolean;
-}) {
-  return (
-    <div className="absolute top-full right-5 px-7 py-5 rounded-b-lg bg-primary">
-      <div className="flex flex-col gap-4 justify-center w-[400px]">
-        {children ? children : ""}
-      </div>
-    </div>
   );
 }
