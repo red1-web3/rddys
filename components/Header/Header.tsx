@@ -1,12 +1,12 @@
+import classNames from "classnames";
 import { listedOptions, navigationItems } from "constant/home/header";
 import { useHeaderActiveListModal } from "context";
 import Image from "next/image";
 import Link from "next/link";
-import React, { ReactNode } from "react";
+import React, { useRef } from "react";
+import { useClickAway } from "react-use";
 
 function Header() {
-  const [headerActiveListModal, setHeaderActiveListModal] =
-    useHeaderActiveListModal();
   return (
     <header className="bg-white">
       <div className="container py-3 relative">
@@ -14,9 +14,6 @@ function Header() {
           <AsideLeft />
           <AsideRight />
         </main>
-
-        {headerActiveListModal !== null &&
-          listedOptions[headerActiveListModal as any].component}
       </div>
     </header>
   );
@@ -50,8 +47,14 @@ function Navigations() {
 function AsideRight() {
   const [headerActiveListModal, setHeaderActiveListModal] =
     useHeaderActiveListModal();
+
+  const listItemRef = useRef(null!);
+  useClickAway(listItemRef, () => {
+    setHeaderActiveListModal(null);
+  });
+
   return (
-    <aside>
+    <aside ref={listItemRef}>
       <ul className="flex items-center gap-x-2.5">
         {listedOptions.map(({ icon }, i) => (
           <li
@@ -61,12 +64,20 @@ function AsideRight() {
             key={i}
             className="text-xl"
           >
-            <button className="p-2 rounded bg-slate-300/30 text-primary-black">
+            <button
+              className={classNames(
+                "p-2 rounded bg-slate-300/30 text-primary-black duration-300 ease-out",
+                headerActiveListModal === i && "!bg-primary-black text-white"
+              )}
+            >
               {icon}
             </button>
           </li>
         ))}
       </ul>
+
+      {headerActiveListModal !== null &&
+        listedOptions[headerActiveListModal as any].component}
     </aside>
   );
 }
