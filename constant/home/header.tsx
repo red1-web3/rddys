@@ -1,4 +1,4 @@
-import { ListedOptions, NavigationItems } from "models/home/header";
+import { ListedOptions, NavigationItems } from "models/home/Header";
 import { HiOutlineUser } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 import { AiOutlineShopping } from "react-icons/ai";
