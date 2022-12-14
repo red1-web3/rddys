@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { EffectFade, Navigation } from "swiper";
+import { Controller, EffectFade, Navigation } from "swiper";
 import Image from "next/image";
 import "swiper/css/effect-fade";
 import {
@@ -11,7 +11,7 @@ import {
 } from "react-icons/hi";
 import { slide2 } from "constant/home/hero";
 
-function Slider2() {
+function Slider2({ controller }: { controller: any }) {
   return (
     <div className="relative">
       <Swiper
@@ -19,7 +19,15 @@ function Slider2() {
           nextEl: "#next",
           prevEl: "#prev",
         }}
-        modules={[Navigation, EffectFade]}
+        controller={
+          controller
+            ? {
+                control: controller,
+                by: "container",
+              }
+            : undefined
+        }
+        modules={[Navigation, EffectFade, Controller]}
         effect={"fade"}
         className="mySwiper h-[600px]"
       >

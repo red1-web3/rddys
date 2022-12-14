@@ -1,11 +1,17 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { Controller } from "swiper";
 
-function Slider1() {
+function Slider1({ setController }: { setController: any }) {
   return (
     <>
-      <Swiper direction={"vertical"} className="mySwiper h-[600px]">
+      <Swiper
+        onSwiper={setController}
+        direction={"vertical"}
+        className="mySwiper h-[600px]"
+        modules={[Controller]}
+      >
         <SwiperSlide>
           <div className="w-full h-full bg-red-400"></div>
         </SwiperSlide>
