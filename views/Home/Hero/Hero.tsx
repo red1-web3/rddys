@@ -7,7 +7,7 @@ function Hero() {
   return (
     <section>
       <div className="h-[600px] grid grid-cols-2">
-        <div>
+        <div className="pointer-events-none">
           <Slider1 setController={setController} />
         </div>
         <div>
