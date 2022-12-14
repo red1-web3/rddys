@@ -22,4 +22,11 @@ export const slide2: Slider2[] = [
       alt: "Image3",
     },
   },
+  {
+    image: {
+      src: "/home/hero_image_4.jpg",
+      fill: true,
+      alt: "Image4",
+    },
+  },
 ];

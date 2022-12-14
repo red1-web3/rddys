@@ -21,11 +21,11 @@ function Slider2() {
         }}
         modules={[Navigation, EffectFade]}
         effect={"fade"}
-        className="mySwiper"
+        className="mySwiper h-[600px]"
       >
         {slide2.map(({ image }, i) => (
           <SwiperSlide key={i}>
-            <div className="h-[600px] relative w-full">
+            <div className="h-full relative w-full">
               <Image className="object-cover select-none" {...image} />
             </div>
           </SwiperSlide>
