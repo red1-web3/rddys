@@ -3,6 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Controller, EffectCreative } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-creative";
+import { slide1 } from "constant/home/hero";
+import Image from "next/image";
 
 function Slider1({ setController }: { setController: any }) {
   return (
@@ -24,18 +26,17 @@ function Slider1({ setController }: { setController: any }) {
           },
         }}
       >
-        <SwiperSlide>
-          <div className="w-full h-full bg-[#D49232]"></div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="w-full h-full bg-green-400"></div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="w-full h-full bg-blue-400"></div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="w-full h-full bg-yellow-400"></div>
-        </SwiperSlide>
+        {slide1.map(({ image, price, title, type }, i) => (
+          <SwiperSlide>
+            <div className="w-full h-full bg-[url(/home/hero_image_bg_2.jpg)] bg-no-repeat bg-cover">
+              <div className="flex justify-center items-center h-full w-full">
+                <div className="w-2/5 h-[85%] bg-[#90562C] rounded-xl overflow-hidden relative">
+                  <Image {...image} className="object-cover" />
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );
