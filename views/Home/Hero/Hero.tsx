@@ -1,18 +1,20 @@
+import Image from "next/image";
 import React, { useState } from "react";
-import Slider1 from "./components/Slider1";
-import Slider2 from "./components/Slider2";
+import SliderDemoImg from "./components/SliderDemoImg";
+import SliderMain from "./components/SliderMain";
+import SliderText from "./components/SliderText";
 
 function Hero() {
   const [controller, setController] = useState<any>(null);
+  const [controller2, setController2] = useState<any>(null);
   return (
     <section>
-      <div className="h-[600px] grid grid-cols-2">
-        <div className="pointer-events-none">
-          <Slider1 setController={setController} />
+      <div className="h-[70vh] grid grid-cols-2">
+        <div className="relative">
+          <SliderDemoImg setController={setController} />
+          <SliderText setController={setController2} />
         </div>
-        <div>
-          <Slider2 controller={controller} />
-        </div>
+        <SliderMain controller={controller} controller2={controller2} />
       </div>
     </section>
   );

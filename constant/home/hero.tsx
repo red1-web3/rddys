@@ -1,4 +1,4 @@
-import { Slider1, Slider2 } from "models/home/Hero";
+import { SliderImageAndText, Slider2 } from "models/home/Hero";
 
 export const slide2: Slider2[] = [
   {
@@ -31,7 +31,7 @@ export const slide2: Slider2[] = [
   },
 ];
 
-export const slide1: Slider1[] = [
+export const sliderImageAndText: SliderImageAndText[] = [
   {
     image: {
       src: "/home/hero_image_1_1.jpg",
@@ -41,6 +41,8 @@ export const slide1: Slider1[] = [
     title: "Nike Dunk Low Retro",
     price: "25",
     type: "new",
+    category: "Shoe",
+    desc: `Created for the hardwood but taken to the streets, the Nike Dunk Low Retro returns with crisp overlays and original team colors.`,
   },
   {
     image: {
@@ -50,7 +52,7 @@ export const slide1: Slider1[] = [
     },
     title: "Nike Dunk Low Retro",
     price: "25",
-    type: "new",
+    type: "most wanted",
   },
   {
     image: {
@@ -60,7 +62,8 @@ export const slide1: Slider1[] = [
     },
     title: "Nike Dunk Low Retro",
     price: "25",
-    type: "new",
+    type: "most wanted",
+    category: "T-Shirt",
   },
   {
     image: {
@@ -70,6 +73,6 @@ export const slide1: Slider1[] = [
     },
     title: "Nike Dunk Low Retro",
     price: "25",
-    type: "new",
+    type: "popular",
   },
 ];

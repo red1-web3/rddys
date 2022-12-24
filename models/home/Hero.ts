@@ -1,12 +1,14 @@
+import { ClothesCategory, ClothesType } from "models/global";
 import { ImageProps } from "next/image";
 
 export interface Slider2 {
   image: ImageProps;
 }
 
-export interface Slider1 {
+export type SliderImageAndText = {
   image: ImageProps;
   price: string | number;
   title: string;
-  type: "new" | "popular" | "most wanted";
-}
+  desc?: string;
+} & ClothesType &
+  ClothesCategory;

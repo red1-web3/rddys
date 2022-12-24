@@ -9,3 +9,10 @@
     @apply lg:max-w-[1500px] lg:px-5 lg:mx-auto;
   }
 }
+
+.textSlider > .swiper > .swiper-wrapper > .swiper-slide {
+  opacity: 0 !important;
+}
+.textSlider > .swiper > .swiper-wrapper > .swiper-slide-visible {
+  opacity: 1 !important;
+}
