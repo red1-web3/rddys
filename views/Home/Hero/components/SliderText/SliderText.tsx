@@ -23,10 +23,10 @@ function SliderText({ setController }: { setController: any }) {
           shadowOffset: 20,
           shadowScale: 0.94,
         }}
-        autoHeight={true}
         direction="vertical"
-        className="mySwiper h-full w-full"
+        className="mySwiper relative w-full"
         onSwiper={setController}
+        autoHeight={true}
       >
         {sliderImageAndText.map((data, i) => (
           <SwiperSlide key={i}>
@@ -40,17 +40,19 @@ function SliderText({ setController }: { setController: any }) {
 
 export default SliderText;
 
-function Slide({ price, title, type, category }: SliderImageAndText) {
+function Slide({ price, title, type, category, desc }: SliderImageAndText) {
   return (
-    <div className="px-10 py-5 w-full space-y-1 absolute bottom-0 left-0">
-      <p className="uppercase font-bold text-white text-sm px-2 py-1 rounded bg-red-500 inline">
-        {type}
-      </p>
-      <p className="text-black font-semibold text-base">{category}</p>
+    <div className="px-10 py-5 w-full space-y-1 h-full flex items-end">
+      <div className="w-full">
+        <p className="uppercase font-bold text-white text-sm px-2 py-1 rounded bg-red-500 inline">
+          {type}
+        </p>
+        <p className="text-black font-semibold text-base">{category}</p>
 
-      <div className="flex items-center justify-between">
-        <h3 className="font-bold text-black text-3xl">{title}</h3>
-        <strong className="font-bold text-black text-3xl">${price}</strong>
+        <div className="w-full flex items-center justify-between">
+          <h3 className="font-bold text-black text-3xl">{title}</h3>
+          <strong className="font-bold text-black text-3xl">${price}</strong>
+        </div>
       </div>
     </div>
   );

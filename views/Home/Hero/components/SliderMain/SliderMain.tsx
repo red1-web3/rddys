@@ -21,13 +21,12 @@ function Slider2({
   const hasC = controller && controller2;
   return (
     <div className="relative">
-      <div>
+      <div className="">
         <Swiper
           navigation={{
             nextEl: "#next",
             prevEl: "#prev",
           }}
-          noSwiping={false}
           controller={
             hasC
               ? {
@@ -38,7 +37,7 @@ function Slider2({
           }
           modules={[Navigation, EffectFade, Controller]}
           effect={"fade"}
-          className="mySwiper h-[70vh] w-full !pointer-events-none"
+          className="mySwiper h-[70vh] w-full"
         >
           {slide2.map(({ image }, i) => (
             <SwiperSlide key={i}>

@@ -50,9 +50,9 @@ export const sliderImageAndText: SliderImageAndText[] = [
       alt: "hero image demo",
       fill: true,
     },
-    title: "Nike Dunk Low Retro",
-    price: "25",
-    type: "most wanted",
+    title: "White clothes",
+    price: "240",
+    type: "popular",
   },
   {
     image: {
