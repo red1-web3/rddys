@@ -3,6 +3,7 @@ import { productsPage } from "constant/home/products";
 import { useActiveProductSlide } from "context";
 import { Product } from "models/home/Products";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 function ProductsPage() {
@@ -66,31 +67,43 @@ function Products() {
 }
 
 function Product({
-  data: { img, name, desc, price, category },
+  data: { img, name, desc, price, category, onSale },
 }: {
   data: Product;
 }) {
   return (
-    <li>
-      <div className="relative h-[500px] rounded-lg overflow-hidden bg-white">
-        <Image {...img} className="object-cover" />
-      </div>
+    <li className="relative">
+      <Link href={"#"}>
+        <div>
+          <div className="relative h-[500px] rounded-lg overflow-hidden bg-white">
+            <Image {...img} className="object-cover" />
+          </div>
 
-      <div className="py-4">
-        <div className="flex items-center justify-between">
-          <span className="text-sm text-primary-black/70 font-medium">
-            {category}
-          </span>
-          <strong className="text-xl font-bold text-primary-black">
-            ${price}
-          </strong>
+          <div className="py-4">
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-primary-black/70 font-medium">
+                {category}
+              </span>
+              <strong className="text-xl font-bold text-primary-black">
+                ${price}
+              </strong>
+            </div>
+            <h4 className="text-3xl uppercase font-extrabold text-primary-black">
+              {name}
+            </h4>
+
+            <p className="text-2xl text-primary-black/70">{desc}</p>
+          </div>
+
+          {onSale && (
+            <div className="absolute top-0 left-0 pl-4 pt-4">
+              <button className="px-2 py-0.5 uppercase font-bold text-xs bg-rose-500 text-white">
+                On sale
+              </button>
+            </div>
+          )}
         </div>
-        <h4 className="text-3xl uppercase font-extrabold text-primary-black">
-          {name}
-        </h4>
-
-        <p className="text-2xl text-primary-black/70">{desc}</p>
-      </div>
+      </Link>
     </li>
   );
 }

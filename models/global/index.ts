@@ -9,5 +9,6 @@ export interface ClothesCategory {
     | "T-Shirt"
     | "Watch"
     | "Socks"
-    | "Bathrobes";
+    | "Bathrobes"
+    | "Surf-Board";
 }

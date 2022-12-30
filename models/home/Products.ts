@@ -10,4 +10,5 @@ export type Product = {
   price: string | number;
   name: string;
   desc: string;
+  onSale?: boolean;
 } & ClothesCategory;
