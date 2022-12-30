@@ -8,3 +8,6 @@ export const useActiveForm = () => useAtom(activeForm);
 
 const heroController = atom<any>(null);
 export const useHeroController = () => useAtom(heroController);
+
+const activeProductSlide = atom<number>(0);
+export const useActiveProductSlide = () => useAtom(activeProductSlide);

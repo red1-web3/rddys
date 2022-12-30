@@ -9,7 +9,7 @@ function Hero() {
   const [controller2, setController2] = useState<any>(null);
   return (
     <section>
-      <div className="h-[70vh] grid grid-cols-2">
+      <div className="h-[80vh] grid grid-cols-2">
         <div className="relative">
           <SliderDemoImg setController={setController} />
           <SliderText setController={setController2} />

@@ -43,7 +43,7 @@ export default SliderText;
 function Slide({ price, title, type, category, desc }: SliderImageAndText) {
   return (
     <div className="px-10 py-5 w-full space-y-1 h-full flex items-end">
-      <div className="w-full">
+      <div className="w-full space-y-1.5">
         <p className="uppercase font-bold text-white text-sm px-2 py-1 rounded bg-red-500 inline">
           {type}
         </p>

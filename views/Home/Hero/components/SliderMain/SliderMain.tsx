@@ -37,7 +37,7 @@ function Slider2({
           }
           modules={[Navigation, EffectFade, Controller]}
           effect={"fade"}
-          className="mySwiper h-[70vh] w-full"
+          className="mySwiper h-[80vh] w-full"
         >
           {slide2.map(({ image }, i) => (
             <SwiperSlide key={i}>
