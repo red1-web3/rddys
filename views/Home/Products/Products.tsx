@@ -67,7 +67,7 @@ function Products() {
 }
 
 function Product({
-  data: { img, name, desc, price, category, onSale },
+  data: { img, name, desc, price, category, onSale, salePrice },
 }: {
   data: Product;
 }) {
@@ -84,20 +84,28 @@ function Product({
               <span className="text-sm text-primary-black/70 font-medium">
                 {category}
               </span>
-              <strong className="text-xl font-bold text-primary-black">
-                ${price}
+              <strong
+                className={classNames(
+                  "text-xl font-extrabold text-primary-black",
+                  "flex items-center gap-x-3"
+                )}
+              >
+                <span className={classNames(onSale && "line-through")}>
+                  ${price}
+                </span>
+
+                {onSale && <span className="text-secondary">{salePrice}</span>}
               </strong>
             </div>
             <h4 className="text-3xl uppercase font-extrabold text-primary-black">
               {name}
             </h4>
-
             <p className="text-2xl text-primary-black/70">{desc}</p>
           </div>
 
           {onSale && (
             <div className="absolute top-0 left-0 pl-4 pt-4">
-              <button className="px-2 py-0.5 uppercase font-bold text-xs bg-rose-500 text-white">
+              <button className="px-2 py-0.5 uppercase font-bold text-xs bg-secondary text-white">
                 On sale
               </button>
             </div>

@@ -53,6 +53,7 @@ export const productsPage: ProductsPage[] = [
         price: "53.95",
         category: "Shoe",
         onSale: true,
+        salePrice: "33.95",
       },
       {
         name: "FROG",
@@ -65,6 +66,7 @@ export const productsPage: ProductsPage[] = [
         price: "17.95",
         category: "T-Shirt",
         onSale: true,
+        salePrice: "10.95",
       },
     ],
   },

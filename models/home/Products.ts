@@ -11,4 +11,5 @@ export type Product = {
   name: string;
   desc: string;
   onSale?: boolean;
+  salePrice?: string;
 } & ClothesCategory;
