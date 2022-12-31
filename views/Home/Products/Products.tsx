@@ -34,7 +34,7 @@ function Labels() {
   const [activeSlide, setActiveSlide] = useActiveProductSlide();
 
   return (
-    <ul className="mt-5 py-6 flex items-center gap-x-16">
+    <ul className="mt-5 py-6 flex items-center gap-x-16 select-none">
       {productsPage.map(({ label }, i) => (
         <li key={i}>
           <button

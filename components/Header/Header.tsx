@@ -8,7 +8,7 @@ import { useClickAway } from "react-use";
 
 function Header() {
   return (
-    <header className="bg-white">
+    <header className="bg-white sticky top-0 left-0 z-[999]">
       <div className="container py-3 relative">
         <main className="flex items-center justify-between">
           <AsideLeft />

@@ -1,4 +1,5 @@
 import React from "react";
+import FeaturedProduct from "./FeaturedProduct";
 import Hero from "./Hero";
 import Products from "./Products";
 
@@ -7,6 +8,7 @@ function HomePage() {
     <>
       <Hero />
       <Products />
+      <FeaturedProduct />
     </>
   );
 }
