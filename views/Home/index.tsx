@@ -1,5 +1,6 @@
 import React from "react";
 import FeaturedProduct from "./FeaturedProduct";
+import GridImage from "./GridImage";
 import Hero from "./Hero";
 import Products from "./Products";
 
@@ -9,6 +10,7 @@ function HomePage() {
       <Hero />
       <Products />
       <FeaturedProduct />
+      <GridImage />
     </>
   );
 }

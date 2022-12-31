@@ -40,7 +40,7 @@ function Labels() {
           <button
             onClick={() => setActiveSlide(i)}
             className={classNames(
-              "uppercase text-3xl opacity-50 text-primary-black font-extrabold duration-[250ms] ease-in-out",
+              "uppercase text-3xl opacity-50 text-primary-black font-black duration-[250ms] ease-in-out",
               i === activeSlide && "opacity-100 scale-125"
             )}
           >
@@ -75,8 +75,8 @@ function Product({
     <li className="relative">
       <Link href={"#"}>
         <div>
-          <div className="relative h-[500px] rounded-lg overflow-hidden bg-white">
-            <Image {...img} className="object-cover" />
+          <div className="relative h-[500px] rounded-lg overflow-hidden">
+            <Image className="object-cover" {...img} />
           </div>
 
           <div className="py-4">
