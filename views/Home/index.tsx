@@ -1,4 +1,5 @@
 import React from "react";
+import FeaturedBrand from "./FeaturedBrand";
 import FeaturedProduct from "./FeaturedProduct";
 import GridImage from "./GridImage";
 import Hero from "./Hero";
@@ -11,6 +12,7 @@ function HomePage() {
       <Products />
       <FeaturedProduct />
       <GridImage />
+      <FeaturedBrand />
     </>
   );
 }

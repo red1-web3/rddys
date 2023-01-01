@@ -56,8 +56,9 @@ function ImageSide() {
             src={url}
             alt="image"
             fill
+            onDrag={() => setRotateImg((prev) => (prev === 0 ? 1 : 0))}
             className={classNames(
-              "rounded-xl object-cover absolute top-0 left-0 origin-top-left duration-[400ms] ease-in-out",
+              "rounded-xl object-cover cursor-grab absolute top-0 left-0 origin-top-left duration-[400ms] ease-in-out",
               rotateImg === i ? "rotate-12 z-[-1]" : "rotate-0 z-[2]"
             )}
           />
