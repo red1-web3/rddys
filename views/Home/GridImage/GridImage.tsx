@@ -7,7 +7,7 @@ function GridImage() {
   return (
     <section className="w-full h-[200vh] _gridImageWrap">
       {gridImageData.map((data, i) => (
-        <div className={classNames(data.class, "relative bg-white")}>
+        <div key={i} className={classNames(data.class, "relative bg-white")}>
           <Image {...data.img} className="object-cover" />
         </div>
       ))}

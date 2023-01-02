@@ -26,7 +26,7 @@ function SliderDemoImg({ setController }: { setController: any }) {
         }}
       >
         {sliderImageAndText.map(({ image, price, title, type }, i) => (
-          <SwiperSlide>
+          <SwiperSlide key={i}>
             <div className="h-full w-full">
               <Image {...image} className="object-cover rounded-xl" />
             </div>
