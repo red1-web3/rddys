@@ -8,5 +8,5 @@ export interface SectionProps {
 interface CardData {
   logoImage: ImageProps;
   desc: string;
-  DemoImage: ImageProps;
+  demoImage: ImageProps;
 }
