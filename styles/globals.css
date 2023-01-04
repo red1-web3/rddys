@@ -63,3 +63,27 @@ body {
   transition-duration: 0.8s;
   @apply absolute h-0.5 bg-primary-black w-0 group-hover:w-full;
 }
+
+._intagramFeedGridWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+}
+
+._feed1 {
+  grid-area: 1 / 1 / 5 / 3;
+}
+._feed2 {
+  grid-area: 1 / 3 / 3 / 4;
+}
+._feed3 {
+  grid-area: 1 / 4 / 3 / 5;
+}
+._feed4 {
+  grid-area: 3 / 3 / 5 / 4;
+}
+._feed5 {
+  grid-area: 3 / 4 / 5 / 5;
+}

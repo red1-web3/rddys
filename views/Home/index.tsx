@@ -3,6 +3,7 @@ import FeaturedBrand from "./FeaturedBrand";
 import FeaturedProduct from "./FeaturedProduct";
 import GridImage from "./GridImage";
 import Hero from "./Hero";
+import InstagramFeed from "./InstagramFeed";
 import Products from "./Products";
 
 function HomePage() {
@@ -11,8 +12,8 @@ function HomePage() {
       <Hero />
       <Products />
       <FeaturedProduct />
-      <GridImage />
       <FeaturedBrand />
+      <InstagramFeed />
     </>
   );
 }

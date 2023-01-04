@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 function FeaturedBrand() {
   return (
-    <section className="my-20">
+    <section className="my-24">
       <div className="container">
         <h2 className="text-4xl font-black text-primary-black uppercase mb-8">
           Featured Brands
@@ -28,14 +28,14 @@ function Grid1() {
 
   return (
     <div>
-      <ul>
+      <ul className="space-y-2">
         {sectionData.map(({ label }, i) => (
           <li key={i} className="group cursor-pointer">
             <button
               onClick={() => setActiveTab(i)}
               className={classNames(
-                "relative pt-1.5 pb-1 block w-full text-left text-4xl scale-[.8] font-black origin-left text-primary-black uppercase opacity-60 group-hover:opacity-100 group-hover:scale-100 _featuredBrandLabelTransition",
-                i === activeTab && "opacity-100 scale-100"
+                "relative pt-1.5 block w-full text-left text-4xl scale-75 font-black origin-left text-primary-black uppercase opacity-60 group-hover:opacity-100 group-hover:scale-100 _featuredBrandLabelTransition",
+                i === activeTab && "opacity-100 !scale-100"
               )}
             >
               {label}
