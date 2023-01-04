@@ -7,7 +7,7 @@ import { RxInstagramLogo } from "react-icons/rx";
 
 function IntagramFeed() {
   return (
-    <section>
+    <section className="pb-20">
       <div className="container">
         <div className="flex items-center justify-between">
           <h2 className="text-4xl font-black text-primary-black uppercase mb-8">

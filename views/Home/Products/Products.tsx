@@ -40,8 +40,8 @@ function Labels() {
           <button
             onClick={() => setActiveSlide(i)}
             className={classNames(
-              "uppercase text-3xl opacity-50 text-primary-black font-black duration-[250ms] ease-in-out",
-              i === activeSlide && "opacity-100 scale-125"
+              "uppercase text-3xl _productLabelTransition opacity-50 text-primary-black font-black duration-[250ms] ease-in-out",
+              i === activeSlide && "!opacity-100 scale-125"
             )}
           >
             {label}
