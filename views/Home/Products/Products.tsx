@@ -34,14 +34,14 @@ function Labels() {
   const [activeSlide, setActiveSlide] = useActiveProductSlide();
 
   return (
-    <ul className="mt-5 py-6 flex items-center gap-x-16 select-none">
+    <ul className="mt-5 py-6 flex items-center gap-x-8 select-none">
       {productsPage.map(({ label }, i) => (
         <li key={i}>
           <button
             onClick={() => setActiveSlide(i)}
             className={classNames(
-              "uppercase text-3xl _productLabelTransition opacity-50 text-primary-black font-black duration-[250ms] ease-in-out",
-              i === activeSlide && "!opacity-100 scale-125"
+              "uppercase text-4xl _productLabelTransition scale-75 opacity-50 text-primary-black font-black",
+              i === activeSlide && "!opacity-100 scale-100"
             )}
           >
             {label}

@@ -58,28 +58,32 @@ function Grid2() {
 
   const activeData = sectionData[activeTab].cardData;
 
-  const isVisible = sectionData.findIndex(({}, i) => i === activeTab);
+  function ActiveSideData({ data }: { data: any }) {
+    return (
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: 20, opacity: 0 }}
+        transition={{ ease: "easeInOut", duration: 0.5 }}
+      >
+        <div className={classNames("space-y-3")}>
+          <Image {...data?.logoImage} />
+          <p className="text-primary-black text-base font-meduim">
+            {data.desc}
+          </p>
+
+          <button className="bg-white rounded-md px-3 py-1 mt-7">
+            See products
+          </button>
+        </div>
+      </motion.div>
+    );
+  }
 
   return (
     <div className="w-full h-fit min-h-[350px] bg-[url(/home/brand_bg.jpg)] px-10 py-6 bg-cover relative bg-no-repeat rounded-xl overflow-hidden">
       <div className="relative z-[2] w-full h-full grid grid-cols-2 gap-x-8 items-center">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        >
-          <div className={classNames("space-y-3")}>
-            <Image {...activeData?.logoImage} />
-            <p className="text-primary-black text-base font-meduim">
-              {activeData.desc}
-            </p>
-
-            <button className="bg-white rounded-md px-3 py-1 mt-7">
-              See products
-            </button>
-          </div>
-        </motion.div>
-
+        <ActiveSideData data={activeData} />
         <div className="flex items-center relative">
           <Image {...activeData.demoImage} className="rounded-lg -rotate-6" />
           <button className="absolute top-0 -left-6 m-8 h-6 z-[3] aspect-square rounded-full bg-primary-black"></button>
