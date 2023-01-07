@@ -5,7 +5,7 @@ export interface SectionProps {
   id: string;
   cardData: CardData;
 }
-interface CardData {
+export interface CardData {
   logoImage: ImageProps;
   desc: string;
   demoImage: ImageProps;
