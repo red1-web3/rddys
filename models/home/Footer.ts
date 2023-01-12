@@ -6,3 +6,7 @@ export interface CustomerService {
   label: string;
   url: string;
 }
+
+export interface SelectOption {
+  label: string;
+}

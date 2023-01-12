@@ -1,4 +1,4 @@
-import { CustomerService, Shop } from "models/home/Footer";
+import { CustomerService, SelectOption, Shop } from "models/home/Footer";
 
 export const shop: Shop[] = [
   {
@@ -47,5 +47,50 @@ export const customerService: CustomerService[] = [
   {
     label: "Privacy",
     url: "#",
+  },
+];
+
+export const country: SelectOption[] = [
+  {
+    label: "  Austria",
+  },
+  {
+    label: "Belgium",
+  },
+  {
+    label: "Czech",
+  },
+  {
+    label: "Republic",
+  },
+  {
+    label: "Denmark",
+  },
+  {
+    label: "Estonia",
+  },
+  {
+    label: "Finland",
+  },
+  {
+    label: "France",
+  },
+  {
+    label: "Germany",
+  },
+  {
+    label: "Greece",
+  },
+  {
+    label: "Netherlands",
+  },
+];
+
+export const languages: SelectOption[] = [
+  {
+    label: "English",
+  },
+  {
+    label: "Bangla",
   },
 ];

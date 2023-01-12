@@ -1,10 +1,14 @@
-import { customerService, shop } from "constant/home/footer";
+import { customerService, languages, shop } from "constant/home/footer";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { GrFacebookOption } from "react-icons/gr";
 import { IoLogoInstagram } from "react-icons/io";
+import CustomSelect from "components/Select/Select";
+import { country as countries } from "constant/home/footer";
 
 function Footer() {
+  const [country, setCountry] = useState<string>("");
+  const [language, setLanguage] = useState<string>("");
   return (
     <footer>
       <div className="container grid grid-cols-[5fr,12fr,5fr] gap-x-24">
@@ -107,7 +111,18 @@ function Footer() {
           </ul>
         </main>
 
-        <aside></aside>
+        <aside className="grid grid-cols-[60%,40%] gap-x-6">
+          <CustomSelect
+            options={countries}
+            selectedValue={country}
+            setSelectedValue={setCountry}
+          />
+          <CustomSelect
+            options={languages}
+            selectedValue={language}
+            setSelectedValue={setLanguage}
+          />
+        </aside>
       </div>
     </footer>
   );
