@@ -9,11 +9,11 @@ import Products from "./Products";
 function HomePage() {
   return (
     <>
-      <Hero />
+      {/* <Hero />
       <Products />
       <FeaturedProduct />
       <FeaturedBrand />
-      <InstagramFeed />
+      <InstagramFeed /> */}
     </>
   );
 }

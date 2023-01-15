@@ -14,7 +14,7 @@ function Account() {
 
       {activeForm === "logIn" ? <LogInForm /> : <SignUpFrom />}
 
-      <div className="flex items-center gap-x-5">
+      <div className="flex items-center gap-x-5 w-full">
         <button
           onClick={() => setActiveForm("logIn")}
           className={classNames(
@@ -68,7 +68,7 @@ function LogInForm() {
 
 function SignUpFrom() {
   return (
-    <form className="space-y-4 py-2 min-w-[400px]">
+    <form className="space-y-4 py-2 lg:min-w-[400px]">
       <Input placeholder="First name" />
       <Input placeholder="Last name" />
       <Input placeholder="Email" />

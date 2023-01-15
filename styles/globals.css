@@ -6,7 +6,7 @@
 
 @layer components {
   .container {
-    @apply lg:max-w-[1500px] lg:px-5 lg:mx-auto;
+    @apply lg:max-w-[1500px] lg:mx-auto px-5;
   }
 }
 
@@ -68,6 +68,11 @@ body {
   transition-property: width;
   transition-duration: 0.8s;
   @apply absolute h-0.5 bg-primary-black w-0 group-hover:w-full;
+}
+._mobileNavTransition {
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-property: all;
+  transition-duration: 0.8s;
 }
 
 ._intagramFeedGridWrapper {

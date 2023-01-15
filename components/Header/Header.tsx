@@ -3,13 +3,13 @@ import { listedOptions, navigationItems } from "constant/home/header";
 import { useHeaderActiveListModal } from "context";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useClickAway } from "react-use";
 
 function Header() {
   return (
     <header className="bg-white sticky top-0 left-0 z-[999]">
-      <div className="container py-3 relative">
+      <div className="container py-2 lg:py-3 relative">
         <main className="flex items-center justify-between">
           <AsideLeft />
           <AsideRight />
@@ -34,10 +34,10 @@ function AsideLeft() {
 
 function Navigations() {
   return (
-    <ul className="flex gap-x-6 items-center font-alegreya">
+    <ul className="gap-x-6 items-center font-alegreya hidden lg:flex">
       {navigationItems.map(({ label }, i) => (
         <li key={i} className="text-lg text-primary-black">
-          <button className="">{label}</button>
+          <button>{label}</button>
         </li>
       ))}
     </ul>
@@ -67,17 +67,49 @@ function AsideRight() {
             <button
               className={classNames(
                 "p-2 rounded bg-slate-300/30 text-primary-black duration-300 ease-out",
-                headerActiveListModal === i && "!bg-primary-black text-white"
+                headerActiveListModal === i && "!bg-primary-black !text-white"
               )}
             >
               {icon}
             </button>
           </li>
         ))}
+
+        <li>
+          <MobileNavigation />
+        </li>
       </ul>
 
       {headerActiveListModal !== null &&
         listedOptions[headerActiveListModal as any].component}
     </aside>
+  );
+}
+
+function MobileNavigation() {
+  const [activeMenu, setActiveMenu] = useState<boolean>(false);
+  return (
+    <div>
+      <menu>
+        <button
+          className="relative p-2 rounded h-8 aspect-square"
+          onClick={() => setActiveMenu((prev) => !prev)}
+        >
+          <span
+            className={classNames(
+              "absolute block top-2/3 left-1/2 -translate-x-1/2 w-[70%] h-0.5 bg-black _mobileNavTransition",
+              activeMenu && "rotate-45 !top-1/2 !-translate-y-1/2"
+            )}
+          ></span>
+          <span
+            className={classNames(
+              "absolute block top-1/3 left-1/2 -translate-x-1/3 w-[50%] h-0.5 bg-black _mobileNavTransition",
+              activeMenu &&
+                "-rotate-45 !w-[70%] !top-1/2 !-translate-y-1/2 !-translate-x-1/2"
+            )}
+          ></span>
+        </button>
+      </menu>
+    </div>
   );
 }

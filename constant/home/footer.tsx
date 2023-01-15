@@ -41,7 +41,7 @@ export const customerService: CustomerService[] = [
     url: "#",
   },
   {
-    label: "Fefund & Returns",
+    label: "Refund & Returns",
     url: "#",
   },
   {

@@ -9,7 +9,7 @@ import Image from "next/image";
 
 function Footer() {
   return (
-    <footer className="pb-10">
+    <footer className="pb-8">
       <div className="container grid grid-cols-[5fr,12fr,5fr] gap-x-24">
         <Aside1 />
         <Main />
