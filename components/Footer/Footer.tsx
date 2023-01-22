@@ -1,11 +1,12 @@
-import { customerService, languages, shop } from "constant/home/footer";
+import { shop } from "constant/home/footer";
 import Link from "next/link";
 import React, { useState } from "react";
-import { GrFacebookOption } from "react-icons/gr";
-import { IoLogoInstagram } from "react-icons/io";
-import CustomSelect from "components/Select/Select";
-import { country as countries } from "constant/home/footer";
-import Image from "next/image";
+import Network from "./Network";
+import CustomerService from "./CustomerService";
+import Culture from "./Culture";
+import Country from "./Country";
+import Language from "./Language";
+import InternationalCards from "./InternationalCards";
 
 function Footer() {
   return (
@@ -76,104 +77,24 @@ function Main() {
         ))}
       </ul>
 
-      <ul className="space-y-1">
-        <li>
-          <h4 className="font-black uppercase">Culture</h4>
-        </li>
-
-        <li>
-          <Link href="#">About Us</Link>
-        </li>
-      </ul>
-
-      <ul className="space-y-1">
-        <li>
-          <h4 className="font-black uppercase">Network</h4>
-        </li>
-
-        <li>
-          <Link href="#">
-            <div className="flex items-center gap-x-1">
-              <span>
-                <GrFacebookOption />
-              </span>
-              <span>Facebook</span>
-            </div>
-          </Link>
-        </li>
-        <li>
-          <Link href="#">
-            <div className="flex items-center gap-x-1">
-              <span>
-                <IoLogoInstagram />
-              </span>
-              <span>Instagram</span>
-            </div>
-          </Link>
-        </li>
-      </ul>
-
-      <ul className="space-y-1">
-        <li>
-          <h4 className="font-black">CUSTOMER SERVICE</h4>
-        </li>
-
-        {customerService.map(({ label, url }, i) => (
-          <li key={i}>
-            <Link href={url}>{label}</Link>
-          </li>
-        ))}
-      </ul>
+      <Culture />
+      <Network />
+      <CustomerService />
     </main>
   );
 }
 
 function Aside2() {
-  const [country, setCountry] = useState<string>("");
-  const [language, setLanguage] = useState<string>("");
   return (
     <aside className="flex flex-col justify-between">
       <div className="grid grid-cols-[3fr,2fr] gap-x-6">
-        <CustomSelect
-          options={countries}
-          selectedValue={country}
-          setSelectedValue={setCountry}
-        />
-        <CustomSelect
-          options={languages}
-          selectedValue={language}
-          setSelectedValue={setLanguage}
-        />
+        <Country />
+        <Language />
       </div>
 
       <div className="space-y-4">
         <div className="flex justify-end w-full">
-          <div className="flex items-center gap-x-4">
-            <div className="px-2.5 py-1 bg-gray-500/10">
-              <Image
-                src="/home/mastercard.svg"
-                alt="master card"
-                height={30}
-                width={40}
-              />
-            </div>
-            <div className="px-2.5 py-1 bg-gray-500/10">
-              <Image
-                src="/home/visa.svg"
-                alt="visa card"
-                height={30}
-                width={40}
-              />
-            </div>
-            <div className="px-2.5 py-1 bg-gray-500/10">
-              <Image
-                src="/home/payoneer.svg"
-                alt="madter card"
-                height={30}
-                width={40}
-              />
-            </div>
-          </div>
+          <InternationalCards theme="dark" />
         </div>
         <p className="text-end">©1989-2023 RDDYS</p>
       </div>

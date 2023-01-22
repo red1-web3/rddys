@@ -14,3 +14,6 @@ export const useActiveProductSlide = () => useAtom(activeProductSlide);
 
 const activeBrandTab = atom<number>(0);
 export const useActiveBrandTab = () => useAtom(activeBrandTab);
+
+const activeMenu = atom<boolean>(false);
+export const useActiveMenu = () => useAtom(activeMenu);

@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { SetStateAction } from "jotai";
 import { SelectOption } from "models/home/Footer";
 import React, { useState, useRef } from "react";
@@ -8,10 +9,12 @@ function CustomSelect({
   options,
   selectedValue,
   setSelectedValue,
+  theme,
 }: {
   options: SelectOption[];
   selectedValue: string;
   setSelectedValue: React.Dispatch<SetStateAction<string>>;
+  theme?: "dark" | "light";
 }) {
   //   Refs
   const selectContainer = useRef<any>(null);
@@ -24,10 +27,13 @@ function CustomSelect({
   return (
     <div
       ref={selectContainer}
-      className="cursor-pointer bg-gray-500/10 rounded-md h-fit relative select-none"
+      className={classNames(
+        "cursor-pointer rounded-md h-fit relative select-none",
+        theme === "dark" ? "bg-gray-500/10" : "bg-[#F5F5F5]"
+      )}
     >
       <div
-        className="flex items-center justify-between py-3 px-4"
+        className="flex items-center justify-between py-3 px-4 gap-x-4"
         onClick={() => setOpen((open) => !open)}
       >
         <span>{selectedValue ? selectedValue : options[0].label}</span>
