@@ -3,7 +3,7 @@ import { listedOptions, navigationItems } from "constant/home/header";
 import { useActiveMenu, useHeaderActiveListModal } from "context";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useRef, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import { useClickAway } from "react-use";
 import { FiArrowRight } from "react-icons/fi";
 import Culture from "components/Footer/Culture";
@@ -12,6 +12,7 @@ import CustomerService from "components/Footer/CustomerService";
 import InternationalCards from "components/Footer/InternationalCards";
 import Country from "components/Footer/Country";
 import Language from "components/Footer/Language";
+import { motion } from "framer-motion";
 
 function Header() {
   return (
@@ -63,6 +64,22 @@ function AsideRight() {
     setHeaderActiveListModal(null);
   });
 
+  function ActivePopUp() {
+    return (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{
+          ease: [0.165, 0.84, 0.44, 1],
+          duration: 0.8,
+        }}
+      >
+        {listedOptions[headerActiveListModal as any].component}
+      </motion.div>
+    );
+  }
+
   return (
     <aside ref={listItemRef}>
       <ul className="flex items-center gap-x-2.5">
@@ -90,8 +107,7 @@ function AsideRight() {
         </li>
       </ul>
 
-      {headerActiveListModal !== null &&
-        listedOptions[headerActiveListModal as any].component}
+      {headerActiveListModal !== null && <ActivePopUp />}
     </aside>
   );
 }
@@ -130,8 +146,10 @@ function MobileNavOverlay() {
   return (
     <nav
       className={classNames(
-        "fixed top-[59px] overflow-y-auto left-0 w-full z-[99] bg-[#95caa8] h-[calc(100vh-59px)] px-4 py-6",
-        activeMenu ? "block" : "hidden"
+        "fixed top-[59px] overflow-y-auto left-0 w-full z-[99] bg-[#95caa8] h-[calc(100vh-59px)] px-4 py-6 _mobileNavTransition",
+        activeMenu
+          ? "opacity-100 pointer-events-auto"
+          : "opacity-0 pointer-events-none"
       )}
     >
       <div className="space-y-6">

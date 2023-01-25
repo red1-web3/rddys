@@ -10,8 +10,8 @@ import InternationalCards from "./InternationalCards";
 
 function Footer() {
   return (
-    <footer className="pb-8">
-      <div className="container grid grid-cols-[5fr,12fr,5fr] gap-x-24">
+    <footer className="pb-6 pt-6 lg:pt-0 lg:pb-8">
+      <div className="container grid grid-cols-1 gap-y-14 lg:gap-y-0 lg:grid-cols-[5fr,12fr,5fr] gap-x-24">
         <Aside1 />
         <Main />
         <Aside2 />
@@ -63,7 +63,7 @@ function Aside1() {
 function Main() {
   return (
     <main className="flex gap-x-24">
-      <ul className="space-y-1 text-base">
+      <ul className="space-y-1 text-base hidden lg:block">
         <li>
           <h4 className="font-black uppercase">Shop</h4>
         </li>
@@ -86,17 +86,17 @@ function Main() {
 
 function Aside2() {
   return (
-    <aside className="flex flex-col justify-between">
-      <div className="grid grid-cols-[3fr,2fr] gap-x-6">
-        <Country />
-        <Language />
+    <aside className="flex flex-col justify-between gap-y-5 lg:gap-y-0">
+      <div className="grid grid-cols-[40%,40%] lg:grid-cols-[3fr,2fr] gap-x-4 lg:gap-x-6">
+        <Country theme="dark" />
+        <Language theme="dark" />
       </div>
 
-      <div className="space-y-4">
-        <div className="flex justify-end w-full">
+      <div className="space-y-2 lg:space-y-4">
+        <div className="flex lg:justify-end w-full">
           <InternationalCards theme="dark" />
         </div>
-        <p className="text-end">©1989-2023 RDDYS</p>
+        <p className="lg:text-end">©1989-2023 RDDYS</p>
       </div>
     </aside>
   );
