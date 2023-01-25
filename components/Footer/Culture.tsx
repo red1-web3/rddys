@@ -3,7 +3,7 @@ import React from "react";
 
 function Culture() {
   return (
-    <ul className="space-y-1 hidden lg:block">
+    <ul className="space-y-1">
       <li>
         <h4 className="font-black uppercase">Culture</h4>
       </li>

@@ -77,7 +77,9 @@ function Main() {
         ))}
       </ul>
 
-      <Culture />
+      <div className="hidden lg:block">
+        <Culture />
+      </div>
       <Network />
       <CustomerService />
     </main>

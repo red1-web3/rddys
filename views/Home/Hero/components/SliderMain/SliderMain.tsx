@@ -1,15 +1,13 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Controller, EffectFade, Navigation } from "swiper";
 import Image from "next/image";
 import "swiper/css/effect-fade";
-import {
-  HiOutlineChevronDoubleLeft,
-  HiOutlineChevronDoubleRight,
-} from "react-icons/hi";
 import { slide2 } from "constant/home/hero";
+import NextButton from "../Buttons/NextButton";
+import PrevButton from "../Buttons/PrevButton";
 
 function Slider2({
   controller,
@@ -20,12 +18,12 @@ function Slider2({
 }) {
   const hasC = controller && controller2;
   return (
-    <div className="relative">
+    <div className="lg:relative absolute w-px h-px lg:w-auto lg:h-auto m-[-1px] lg:m-0 overflow-hidden lg:overflow-auto whitespace-nowrap lg:whitespace-normal">
       <div className="">
         <Swiper
           navigation={{
-            nextEl: "#next",
-            prevEl: "#prev",
+            nextEl: "#nextHeroSlide",
+            prevEl: "#prevHeroSlide",
           }}
           controller={
             hasC
@@ -42,7 +40,11 @@ function Slider2({
           {slide2.map(({ image }, i) => (
             <SwiperSlide key={i}>
               <div className="h-full relative w-full">
-                <Image className="object-cover select-none" {...image} />
+                <Image
+                  className="object-cover select-none"
+                  {...image}
+                  sizes="auto"
+                />
               </div>
             </SwiperSlide>
           ))}
@@ -56,25 +58,3 @@ function Slider2({
   );
 }
 export default Slider2;
-
-function NextButton() {
-  return (
-    <button
-      className="bg-white p-2 text-2xl rounded duration-200 disabled:opacity-40 disabled:pointer-events-none active:bg-primary-black/40 mx-5"
-      id="next"
-    >
-      <HiOutlineChevronDoubleRight />
-    </button>
-  );
-}
-
-function PrevButton() {
-  return (
-    <button
-      className="bg-white p-2 text-2xl rounded duration-200 disabled:opacity-40 disabled:pointer-events-none active:bg-primary-black/40 mx-5"
-      id="prev"
-    >
-      <HiOutlineChevronDoubleLeft />
-    </button>
-  );
-}
