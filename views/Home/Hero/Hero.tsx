@@ -16,7 +16,7 @@ function Hero() {
           <SliderDemoImg setController={setController} />
           <SliderText setController={setController2} />
 
-          <div className="absolute top-0 left-0 w-full z-[60] lg:hidden">
+          <div className="absolute top-0 left-0 w-full z-[60] lg:hidden flex items-center justify-between h-full">
             <PrevButton />
             <NextButton />
           </div>

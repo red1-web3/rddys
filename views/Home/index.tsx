@@ -10,7 +10,7 @@ function HomePage() {
   return (
     <>
       <Hero />
-      {/* <Products /> */}
+      <Products />
       {/* <FeaturedProduct /> */}
       {/* <FeaturedBrand /> */}
       {/* <InstagramFeed /> */}

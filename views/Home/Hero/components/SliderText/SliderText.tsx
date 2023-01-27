@@ -50,7 +50,9 @@ function Slide({ price, title, type, category, desc }: SliderImageAndText) {
         <p className="text-black font-semibold text-base">{category}</p>
 
         <div className="w-full flex items-center justify-between">
-          <h3 className="font-bold text-black text-3xl">{title}</h3>
+          <h3 className="font-bold text-black text-3xl max-w-[80%] lg:w-auto">
+            {title}
+          </h3>
           <strong className="font-bold text-black text-3xl">${price}</strong>
         </div>
       </div>
