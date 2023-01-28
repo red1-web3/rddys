@@ -25,9 +25,9 @@ function ProductsPage() {
             </li>
           </ul>
           <ProductsDekstop />
+          <ProductsMobile />
         </div>
       </div>
-      <ProductsMobile />
     </section>
   );
 }
@@ -38,7 +38,7 @@ function Labels() {
   const [activeSlide, setActiveSlide] = useActiveProductSlide();
 
   return (
-    <ul className="mt-5 py-6 flex items-center gap-x-4 lg:gap-x-8 select-none">
+    <ul className="mt-5 py-5 lg:py-6 flex items-center gap-x-4 lg:gap-x-8 select-none">
       {productsPage.map(({ label }, i) => (
         <li key={i}>
           <button
@@ -157,7 +157,7 @@ function ProductsMobile() {
         <li className="relative">
           <Link href={"#"}>
             <div>
-              <div className="relative h-[500px] rounded-lg overflow-hidden">
+              <div className="relative h-[350px] rounded-lg overflow-hidden">
                 <Image className="object-cover" {...img} />
               </div>
 
@@ -181,10 +181,10 @@ function ProductsMobile() {
                     )}
                   </strong>
                 </div>
-                <h4 className="text-3xl uppercase font-extrabold text-primary-black">
+                <h4 className="text-2xl uppercase font-extrabold text-primary-black">
                   {name}
                 </h4>
-                <p className="text-2xl text-primary-black/70">{desc}</p>
+                <p className="text-xl text-primary-black/70">{desc}</p>
               </div>
 
               {onSale && (
@@ -201,7 +201,7 @@ function ProductsMobile() {
     );
   }
   return (
-    <div>
+    <div className="lg:hidden">
       <Swiper
         className="w-full h-[70vh] mySwiper"
         slidesPerView={1.2}

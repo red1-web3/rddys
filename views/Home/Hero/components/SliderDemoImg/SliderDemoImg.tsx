@@ -8,7 +8,7 @@ import Image from "next/image";
 
 function SliderDemoImg({ setController }: { setController: any }) {
   return (
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] lg:w-[35%] h-[85%] lg:h-[75%]">
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] lg:w-[35%] h-[85%] lg:h-[75%]">
       <Swiper
         onSwiper={setController}
         direction={"horizontal"}
