@@ -13,9 +13,11 @@ function FeaturedBrand() {
         <h2 className="text-4xl font-black text-primary-black uppercase mb-8">
           Featured Brands
         </h2>
-        <div className="grid grid-cols-[485px,auto] gap-x-10">
+        <div className="grid lg:grid-cols-[485px,auto] gap-y-2 lg:gap-y-0 lg:gap-x-10">
           <Grid1 />
-          <Grid2 />
+          <div>
+            <Grid2 />
+          </div>
         </div>
       </div>
     </section>
@@ -32,14 +34,17 @@ function Grid1() {
   }
 
   return (
-    <div>
-      <ul className="space-y-2">
+    <div className="overflow-x-auto scrollbar-none">
+      <ul className="lg:space-y-2 flex items-center gap-x-4 lg:block">
         {sectionData.map(({ label }, i) => (
-          <li key={i} className="group cursor-pointer">
+          <li
+            key={i}
+            className="group cursor-pointer whitespace-nowrap lg:whitespace-normal"
+          >
             <button
               onClick={() => clickHandle(i)}
               className={classNames(
-                "relative pt-1.5 block w-full text-left text-4xl scale-75 font-black origin-left text-primary-black uppercase opacity-60 group-hover:opacity-100 group-hover:scale-100 _featuredBrandLabelTransition",
+                "relative pt-1.5 block w-full text-left text-lg lg:text-4xl lg:scale-75 font-black origin-left text-primary-black uppercase opacity-60 group-hover:opacity-100 group-hover:scale-100 _featuredBrandLabelTransition",
                 i === activeTab && "opacity-100 !scale-100"
               )}
             >
@@ -47,7 +52,7 @@ function Grid1() {
             </button>
             <span
               className={classNames(
-                "border-b block border-primary-black/60 relative _featuredBrandBorderTransition",
+                "hidden lg:block border-b border-primary-black/60 relative _featuredBrandBorderTransition",
                 i === activeTab && "before:!h-0.5 before:!w-full"
               )}
             ></span>
@@ -99,14 +104,14 @@ function Grid2() {
   }
 
   return (
-    <div className="w-full h-fit min-h-[350px] bg-[url(/home/brand_bg.jpg)] px-10 py-6 bg-cover relative bg-no-repeat rounded-xl overflow-hidden">
-      <div className="relative z-[2] w-full h-full grid grid-cols-2 gap-x-8 items-center">
+    <div className="w-full h-fit min-h-[350px] bg-[url(/home/brand_bg.jpg)] px-10 pt-6 pb-12 lg:py-6 bg-cover relative bg-no-repeat rounded-lg lg:rounded-xl overflow-hidden">
+      <div className="relative z-[2] w-full h-full grid gap-y-8 lg:gap-y-0 lg:grid-cols-2 gap-x-8 items-center">
         <ActiveSideData />
-        <div className="flex items-center relative">
+        <div className="flex items-center gap-y-2 lg:gap-y-0 relative">
           <div className="-rotate-6 rounded-lg overflow-hidden">
             <DemoImage />
           </div>
-          <button className="absolute top-0 -left-6 m-8 h-6 z-[3] aspect-square rounded-full bg-[#3B8C86]"></button>
+          <button className="absolute top-0 -left-5 lg:-left-6 m-6 h-5 lg:m-8 lg:h-6 z-[3] aspect-square rounded-full bg-[#3B8C86]"></button>
         </div>
       </div>
     </div>

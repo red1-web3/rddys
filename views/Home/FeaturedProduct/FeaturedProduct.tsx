@@ -26,16 +26,16 @@ export default FeaturedProject;
 
 function TextSide() {
   return (
-    <div className="flex flex-col gap-1.5 text-primary-black px-4 lg:px-0">
-      <strong className="bg-black w-fit text-white font-extrabold text-xs px-1.5 py-0.5 uppercase">
+    <div className="flex flex-col gap-1 lg:gap-1.5 text-primary-black px-4 lg:px-0">
+      <strong className="bg-black w-fit font-black text-white text-xs px-1.5 py-0.5 uppercase">
         Featured Product
       </strong>
       <span className="text-sm">Shoes</span>
-      <h5 className="uppercase font-black text-5xl">vans</h5>
-      <p className="text-3xl">Skate Half Cab 92 GORE-TEX</p>
+      <h5 className="uppercase font-black text-4xl lg:text-5xl">vans</h5>
+      <p className="lg:text-3xl text-2xl">Skate Half Cab 92 GORE-TEX</p>
       <span className="font-medium">30 Years of the Half Cab</span>
       <p>In 1992, skaters created the world’s greatest skate shoe with...</p>
-      <button className="bg-white rounded py-1 px-2 w-fit text-sm">
+      <button className="bg-white rounded py-1 mt-2 px-2 w-fit text-base">
         Learn more
       </button>
     </div>

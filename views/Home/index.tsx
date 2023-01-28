@@ -12,7 +12,7 @@ function HomePage() {
       <Hero />
       <Products />
       <FeaturedProduct />
-      {/* <FeaturedBrand /> */}
+      <FeaturedBrand />
       {/* <InstagramFeed /> */}
     </>
   );
