@@ -10,9 +10,9 @@ import {
 
 function FeaturedProject() {
   return (
-    <section className="bg-[url('/featured_project_bg.jpg')] bg-no-repeat bg-cover relative pt-24 pb-32 my-10">
+    <section className="bg-[url('/featured_project_bg.jpg')] bg-no-repeat bg-cover relative py-14 lg:pt-24 lg:pb-32 my-10">
       <div className="relative z-[2] container flex items-center justify-center">
-        <div className="w-[80%] grid grid-cols-2 items-center">
+        <div className="lg:w-[80%] grid lg:grid-cols-2 gap-y-7 lg:gap-y-0 items-center">
           <TextSide />
           <ImageSide />
         </div>
@@ -26,7 +26,7 @@ export default FeaturedProject;
 
 function TextSide() {
   return (
-    <div className="flex flex-col gap-1.5 text-primary-black">
+    <div className="flex flex-col gap-1.5 text-primary-black px-4 lg:px-0">
       <strong className="bg-black w-fit text-white font-extrabold text-xs px-1.5 py-0.5 uppercase">
         Featured Product
       </strong>
@@ -47,7 +47,7 @@ function ImageSide() {
   const [rotateImg, setRotateImg] = useState<number>(0);
 
   return (
-    <div className="h-[390px] w-full relative p-4">
+    <div className="h-[200px] lg:h-[390px] w-full relative p-4">
       <CornerShapes />
       <div className="w-full h-full relative">
         {images.map((url, i) => (
@@ -59,14 +59,16 @@ function ImageSide() {
             onDrag={() => setRotateImg((prev) => (prev === 0 ? 1 : 0))}
             className={classNames(
               "rounded-xl object-cover cursor-grab absolute top-0 left-0 origin-top-left duration-[400ms] ease-in-out",
-              rotateImg === i ? "rotate-12 z-[-1]" : "rotate-0 z-[2]"
+              rotateImg === i
+                ? "lg:rotate-12 rotate-6 z-[-1]"
+                : "rotate-0 z-[2]"
             )}
           />
         ))}
       </div>
       <button
         onClick={() => setRotateImg((prev) => (prev === 0 ? 1 : 0))}
-        className="absolute top-0 left-0 m-8 h-6 z-[3] aspect-square rounded-full bg-primary-black"
+        className="absolute top-0 left-0 m-6 lg:m-8 h-5 lg:h-6 z-[3] aspect-square rounded-full bg-primary-black"
       ></button>
     </div>
   );

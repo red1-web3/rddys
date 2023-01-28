@@ -11,7 +11,7 @@ function HomePage() {
     <>
       <Hero />
       <Products />
-      {/* <FeaturedProduct /> */}
+      <FeaturedProduct />
       {/* <FeaturedBrand /> */}
       {/* <InstagramFeed /> */}
     </>
