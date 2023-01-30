@@ -43,7 +43,7 @@ function CustomSelect({
       </div>
 
       {open && (
-        <ul className="absolute shadow-md bg-[#F5F5F5] rounded-t-md overflow-hidden bottom-[calc(100%)] left-0 w-full flex flex-col">
+        <ul className="absolute shadow-md bg-[#F5F5F5] rounded-t-md overflow-hidden bottom-[calc(100%)] left-0 w-full flex flex-col z-[999]">
           {options.map(({ label }, i) => (
             <li
               onClick={() => {

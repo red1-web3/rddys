@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { sectionData } from "constant/home/featuredBrands";
 import { useActiveBrandTab } from "context";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { CardData } from "models/home/FeautredBrands";
 
@@ -10,9 +10,14 @@ function FeaturedBrand() {
   return (
     <section className="my-24">
       <div className="container">
-        <h2 className="text-4xl font-black text-primary-black uppercase mb-8">
-          Featured Brands
-        </h2>
+        <div className="flex items-center justify-between mb-4 lg:mb-10">
+          <h2 className="text-2xl lg:text-4xl font-black text-primary-black uppercase">
+            Featured Brands
+          </h2>
+          <button className="px-3 text-sm font-medium py-1 rounded-md bg-black text-white">
+            See all
+          </button>
+        </div>
         <div className="grid lg:grid-cols-[485px,auto] gap-y-2 lg:gap-y-0 lg:gap-x-10">
           <Grid1 />
           <div>
@@ -28,24 +33,40 @@ export default FeaturedBrand;
 
 function Grid1() {
   const [activeTab, setActiveTab] = useActiveBrandTab();
+  const refz = useRef<any>();
 
-  function clickHandle(i: number) {
-    setActiveTab(i);
+  const scrollX = (scrollOffset: number) => {
+    refz.current.scrollLeft += scrollOffset;
+  };
+
+  function clickHandle(i: number, e: any) {
+    const targetWidth = e.target.clientWidth;
+    setActiveTab((prev: number) => {
+      if (prev < i) {
+        scrollX(targetWidth);
+      } else {
+        scrollX(-targetWidth);
+      }
+
+      return i;
+    });
   }
 
   return (
-    <div className="overflow-x-auto scrollbar-none">
+    <div ref={refz} className="overflow-x-auto scrollbar-none scroll-smooth">
       <ul className="lg:space-y-2 flex items-center gap-x-4 lg:block">
         {sectionData.map(({ label }, i) => (
           <li
             key={i}
-            className="group cursor-pointer whitespace-nowrap lg:whitespace-normal"
+            className={classNames(
+              "group cursor-pointer whitespace-nowrap lg:whitespace-normal"
+            )}
           >
             <button
-              onClick={() => clickHandle(i)}
+              onClick={(e) => clickHandle(i, e)}
               className={classNames(
                 "relative pt-1.5 block w-full text-left text-lg lg:text-4xl lg:scale-75 font-black origin-left text-primary-black uppercase opacity-60 group-hover:opacity-100 group-hover:scale-100 _featuredBrandLabelTransition",
-                i === activeTab && "opacity-100 !scale-100"
+                i === activeTab && "!opacity-100 !scale-100"
               )}
             >
               {label}
