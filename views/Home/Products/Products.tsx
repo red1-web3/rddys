@@ -75,7 +75,6 @@ function ProductsDekstop() {
           duration: 0.5,
           delay: delay,
         }}
-        className="hidden lg:block"
       >
         <li className="relative">
           <Link href={"#"}>
@@ -125,7 +124,7 @@ function ProductsDekstop() {
   }
 
   return (
-    <div>
+    <div className="hidden lg:block">
       <ul className="grid grid-cols-3 gap-x-20">
         {productsPage[activeSlide].products.map((data, i) => (
           <Product data={data} delay={i * 0.1} key={i} />
@@ -203,7 +202,7 @@ function ProductsMobile() {
   return (
     <div className="lg:hidden">
       <Swiper
-        className="w-full h-[70vh] mySwiper"
+        className="w-full h-[70vh] md:h-[40vh] mySwiper"
         slidesPerView={1.2}
         spaceBetween={30}
       >

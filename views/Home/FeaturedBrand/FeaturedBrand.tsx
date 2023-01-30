@@ -41,13 +41,14 @@ function Grid1() {
 
   function clickHandle(i: number, e: any) {
     const targetWidth = e.target.clientWidth;
+
+    console.log(e);
     setActiveTab((prev: number) => {
       if (prev < i) {
         scrollX(targetWidth);
       } else {
         scrollX(-targetWidth);
       }
-
       return i;
     });
   }
