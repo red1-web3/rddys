@@ -6,7 +6,7 @@
 
 @layer components {
   .container {
-    @apply lg:max-w-[1500px] lg:mx-auto px-5;
+    @apply lg:max-w-[1500px] md:mx-auto px-5;
   }
 }
 

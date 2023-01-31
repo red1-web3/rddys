@@ -146,7 +146,7 @@ function MobileNavOverlay() {
   return (
     <nav
       className={classNames(
-        "fixed top-[59px] overflow-y-auto left-0 w-full z-[99] bg-[#95caa8] h-[calc(100vh-59px)] px-4 py-6 _mobileNavTransition",
+        "fixed top-[59px] overflow-y-auto left-0 w-full z-[99] bg-white h-[calc(100vh-59px)] px-4 py-6 _mobileNavTransition",
         activeMenu
           ? "opacity-100 pointer-events-auto"
           : "opacity-0 pointer-events-none"

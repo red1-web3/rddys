@@ -38,23 +38,10 @@ function IntagramFeed() {
           ))}
         </ul>
 
-        <ul className="space-y-4">
+        <ul className="space-y-4 lg:hidden">
           {feeds.map(({ image }, i) => (
-            <li
-              key={i}
-              className={classNames("group relative w-full aspect-square")}
-            >
+            <li key={i} className={classNames("relative w-full aspect-square")}>
               <Image {...image} className="rounded-xl" />
-
-              <Link
-                href="#"
-                className="opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto"
-              >
-                <button className="absolute top-0 right-0 flex items-center gap-x-2 m-4 px-3 py-1 bg-[#E9E7DC] rounded-md">
-                  <RxInstagramLogo />
-                  <span>See publication</span>
-                </button>
-              </Link>
             </li>
           ))}
         </ul>
