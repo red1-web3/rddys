@@ -1,4 +1,9 @@
-import { CustomerService, SelectOption, Shop } from "models/home/Footer";
+import {
+  CustomerService,
+  OpeningHours,
+  SelectOption,
+  Shop,
+} from "models/home/Footer";
 
 export const shop: Shop[] = [
   {
@@ -92,5 +97,36 @@ export const languages: SelectOption[] = [
   },
   {
     label: "Bangla",
+  },
+];
+
+export const openingHours: OpeningHours[] = [
+  {
+    day: "monday",
+    time: "10h00 - 17h30",
+  },
+  {
+    day: "tuesday",
+    time: "10h00 - 17h30",
+  },
+  {
+    day: "wednesday",
+    time: "10h00 - 17h30",
+  },
+  {
+    day: "thursday",
+    time: "10h00 - 19h00",
+  },
+  {
+    day: "friday",
+    time: "10h00 - 19h00",
+  },
+  {
+    day: "saturday",
+    time: "10h00 - 17h30",
+  },
+  {
+    day: "sunday",
+    time: "10h00 - 17h30",
   },
 ];

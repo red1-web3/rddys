@@ -10,3 +10,8 @@ export interface CustomerService {
 export interface SelectOption {
   label: string;
 }
+
+export interface OpeningHours {
+  day: string;
+  time: string;
+}

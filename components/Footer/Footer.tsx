@@ -1,12 +1,14 @@
-import { shop } from "constant/home/footer";
+import { openingHours, shop } from "constant/home/footer";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Network from "./Network";
 import CustomerService from "./CustomerService";
 import Culture from "./Culture";
 import Country from "./Country";
 import Language from "./Language";
 import InternationalCards from "./InternationalCards";
+import classNames from "classnames";
+import { useClickAway } from "react-use";
 
 function Footer() {
   return (
@@ -23,6 +25,13 @@ function Footer() {
 export default Footer;
 
 function Aside1() {
+  const [isOpenShop, setIsOpenShop] = useState<boolean>(false);
+  const openShopRef = useRef<any>(!null);
+
+  useClickAway(openShopRef, () => {
+    setIsOpenShop(false);
+  });
+
   return (
     <aside>
       <ul className="text-black text-base space-y-2">
@@ -50,10 +59,20 @@ function Aside1() {
           </Link>
         </li>
 
-        <li className="!mt-6">
-          <button className="bg-primary-black font-medium px-3 py-1.5 text-white rounded-md tracking-wide">
+        <li ref={openShopRef} className={classNames("!mt-6 relative w-fit")}>
+          <button
+            onClick={() => setIsOpenShop((prev) => !prev)}
+            className="bg-primary-black font-medium px-3 py-1.5 text-white rounded-md tracking-wide"
+          >
             Opening Hours
           </button>
+
+          <OpeningHours
+            className={classNames(
+              "duration-300 ease-in",
+              isOpenShop ? "opacity-100" : "opacity-0"
+            )}
+          />
         </li>
       </ul>
     </aside>
@@ -101,5 +120,41 @@ function Aside2() {
         <p className="lg:text-end">©1989-2023 RDDYS</p>
       </div>
     </aside>
+  );
+}
+
+function OpeningHours({ className, ...rest }: React.ComponentProps<"div">) {
+  return (
+    <div
+      {...rest}
+      className={classNames(
+        className,
+        "absolute bottom-0 left-0 lg:left-[calc(100%+20px)] z-[999] w-[300px]"
+      )}
+    >
+      <ul className="w-full bg-white border border-primary-black rounded-md overflow-hidden">
+        {openingHours.map(({ day, time }, i) => (
+          <li
+            key={i}
+            className="grid grid-cols-2 border-b border-primary-black last:border-b-0"
+          >
+            <span
+              className={classNames(
+                "uppercase font-extrabold text-sm flex items-center justify-center text-primary-black/90 border-r py-1 tracking-tight border-primary-black"
+              )}
+            >
+              {day}
+            </span>
+            <span
+              className={classNames(
+                "font-semibold text-base text-primary-black/90 flex iems-center py-1 justify-center border-primary-black"
+              )}
+            >
+              {time}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
