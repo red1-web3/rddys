@@ -25,7 +25,7 @@ function Footer() {
 export default Footer;
 
 function Aside1() {
-  const [isOpenShop, setIsOpenShop] = useState<boolean>(false);
+  const [isOpenShop, setIsOpenShop] = useState<boolean>(true);
   const openShopRef = useRef<any>(!null);
 
   useClickAway(openShopRef, () => {
@@ -69,8 +69,10 @@ function Aside1() {
 
           <OpeningHours
             className={classNames(
-              "duration-300 ease-in",
-              isOpenShop ? "opacity-100" : "opacity-0"
+              "_mobileNavTransition",
+              isOpenShop
+                ? "opacity-100 pointer-events-auto"
+                : "opacity-0 pointer-events-none"
             )}
           />
         </li>

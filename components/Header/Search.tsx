@@ -12,7 +12,7 @@ function Search() {
       <div className="relative">
         <input
           type="text"
-          className="outline-none py-2 p-3 pl-8 rounded w-full"
+          className="outline-none py-2 p-3 pl-8 rounded w-full border border-primary-black"
         />
 
         <span className="absolute top-1/2 -translate-y-1/2 text-xl left-2">
