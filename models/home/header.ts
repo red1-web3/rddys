@@ -1,9 +1,9 @@
-export interface NavigationItems {
+export type NavigationItems = {
   label: string;
   url: string;
   component: React.ReactNode;
-}
-export interface ListedOptions {
+};
+export type ListedOptions = {
   icon: string | React.ReactNode;
   component: React.ReactNode;
-}
+};
