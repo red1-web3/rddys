@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React, { useState } from "react";
 import NextButton from "./components/Buttons/NextButton";
 import PrevButton from "./components/Buttons/PrevButton";
@@ -11,7 +10,7 @@ function Hero() {
   const [controller2, setController2] = useState<any>(null);
   return (
     <section>
-      <div className="h-[80vh] grid lg:grid-cols-2">
+      <div className="h-[calc(100vh-60px)] lg:h-[80vh] grid lg:grid-cols-2">
         <div className="relative">
           <SliderDemoImg setController={setController} />
           <SliderText setController={setController2} />
@@ -20,6 +19,8 @@ function Hero() {
             <PrevButton />
             <NextButton />
           </div>
+
+          <div className="absolute top-0 z-[-1] left-0 ffc w-full h-full"></div>
         </div>
         <SliderMain controller={controller} controller2={controller2} />
       </div>
