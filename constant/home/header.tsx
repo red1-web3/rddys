@@ -6,7 +6,7 @@ import Account from "components/Header/Account";
 import Search from "components/Header/Search";
 import Cart from "components/Header/Cart";
 
-export const navigationItems: Partial<NavigationItems>[] = [
+export const navigationItems: NavigationItems[] = [
   {
     label: "Skateshop",
   },
@@ -27,7 +27,7 @@ export const navigationItems: Partial<NavigationItems>[] = [
   },
 ];
 
-export const listedOptions: Partial<ListedOptions>[] = [
+export const listedOptions: ListedOptions[] = [
   {
     icon: <HiOutlineUser />,
     component: <Account />,
