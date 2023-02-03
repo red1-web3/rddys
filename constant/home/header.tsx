@@ -1,4 +1,3 @@
-import { ListedOptions, NavigationItems } from "models/home/Header";
 import { HiOutlineUser } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 import { AiOutlineShopping } from "react-icons/ai";
@@ -6,7 +5,7 @@ import Account from "components/Header/Account";
 import Search from "components/Header/Search";
 import Cart from "components/Header/Cart";
 
-export const navigationItems: NavigationItems[] = [
+export const navigationItems = [
   {
     label: "Skateshop",
   },
@@ -27,7 +26,7 @@ export const navigationItems: NavigationItems[] = [
   },
 ];
 
-export const listedOptions: ListedOptions[] = [
+export const listedOptions = [
   {
     icon: <HiOutlineUser />,
     component: <Account />,
