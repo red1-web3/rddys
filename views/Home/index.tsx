@@ -1,3 +1,4 @@
+import OnLoadAnimation from "components/Animations/OnLoadAnimation";
 import React from "react";
 import FeaturedBrand from "./FeaturedBrand";
 import FeaturedProduct from "./FeaturedProduct";
@@ -9,6 +10,7 @@ import Products from "./Products";
 function HomePage() {
   return (
     <>
+      {/* <OnLoadAnimation /> */}
       <Hero />
       <Products />
       <FeaturedProduct />
