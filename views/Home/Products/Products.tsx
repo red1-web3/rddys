@@ -80,7 +80,7 @@ function ProductsDekstop() {
           <Link href={"#"}>
             <div>
               <div className="relative h-[500px] rounded-lg overflow-hidden">
-                <Image className="object-cover" {...img} />
+                <Image className="object-cover" {...img} priority />
               </div>
 
               <div className="py-4">

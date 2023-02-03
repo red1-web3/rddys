@@ -98,7 +98,7 @@ function Grid2() {
         transition={{ ease: "easeInOut", duration: 0.5 }}
       >
         <div className={classNames("space-y-3")}>
-          <Image {...activeData?.logoImage} />
+          <Image {...activeData?.logoImage} priority />
           <p className="text-primary-black text-base font-meduim">
             {activeData.desc}
           </p>
@@ -119,7 +119,7 @@ function Grid2() {
         exit={{ scale: 1.2, opacity: 0, rotate: -2 }}
         transition={{ ease: "easeInOut", duration: 0.5 }}
       >
-        <Image {...activeData.demoImage} className="rounded-lg" />
+        <Image {...activeData.demoImage} className="rounded-lg" priority />
       </motion.div>
     );
   }
