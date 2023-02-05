@@ -10,7 +10,7 @@ import Products from "./Products";
 function HomePage() {
   return (
     <>
-      {/* <OnLoadAnimation /> */}
+      <OnLoadAnimation />
       <Hero />
       <Products />
       <FeaturedProduct />

@@ -1,15 +1,37 @@
 import React, { useEffect } from "react";
 import gsap, { Expo } from "gsap";
+import { slide2, sliderImageAndText } from "constant/home/hero";
+
+function preloadImages(urls: string[], allImagesLoadedCallback: () => void) {
+  var loadedCounter = 0;
+  var toBeLoadedNumber = urls.length;
+  urls.forEach(function (url) {
+    preloadImage(url, function () {
+      loadedCounter++;
+      if (loadedCounter == toBeLoadedNumber) {
+        allImagesLoadedCallback();
+      }
+    });
+  });
+  function preloadImage(url: string, anImageLoadedCallback: () => void) {
+    var img = new Image();
+    img.onload = anImageLoadedCallback;
+    img.src = url;
+  }
+}
 
 function OnLoadAnimation() {
   useEffect(() => {
-    window.addEventListener("DOMContentLoaded", () => {
-      gsap.to("._wrapperLoadAnimation", {
-        xPercent: -100,
-        duration: 1.5,
-        ease: Expo.easeOut,
-      });
-    });
+    preloadImages(
+      [`${sliderImageAndText[0].image.src}`, `${slide2[0].image.src}`],
+      function () {
+        gsap.to("._wrapperLoadAnimation", {
+          xPercent: -100,
+          duration: 1.5,
+          // ease: Expo.easeOut,
+        });
+      }
+    );
   }, []);
 
   return (
