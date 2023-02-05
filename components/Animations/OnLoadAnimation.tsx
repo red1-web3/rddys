@@ -22,20 +22,34 @@ function preloadImages(urls: string[], allImagesLoadedCallback: () => void) {
 
 function OnLoadAnimation() {
   useEffect(() => {
+    const timeLine = gsap.timeline();
     preloadImages(
       [`${sliderImageAndText[0].image.src}`, `${slide2[0].image.src}`],
       function () {
-        gsap.to("._wrapperLoadAnimation", {
-          xPercent: -100,
-          duration: 1.5,
-          // ease: Expo.easeOut,
-        });
+        setTimeout(() => {
+          timeLine
+            .to("._wrapperLoadAnimation", {
+              xPercent: -100,
+              duration: 0.65,
+              clipPath: "polygon(0 0, 100% 0%, 100% 100%, 0% 100%)",
+            })
+            .to(
+              "._homeMainBody",
+              {
+                webkitFilter: "blur(" + 0 + "px)",
+              },
+              "-=.3"
+            );
+        }, 100);
       }
     );
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-screen bg-primary z-[999] _wrapperLoadAnimation"></div>
+    <div
+      style={{ clipPath: "polygon(0 0, 100% 0%, 92% 100%, 0% 100%)" }}
+      className="fixed top-0 left-0 w-[calc(100vw+200px)] h-screen bg-primary z-[999] _wrapperLoadAnimation"
+    ></div>
   );
 }
 

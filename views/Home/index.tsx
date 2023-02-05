@@ -11,13 +11,19 @@ function HomePage() {
   return (
     <>
       <OnLoadAnimation />
-      <Hero />
-      <Products />
-      <FeaturedProduct />
-      <FeaturedBrand />
-      <InstagramFeed />
+      <Main>
+        <Hero />
+        <Products />
+        <FeaturedProduct />
+        <FeaturedBrand />
+        <InstagramFeed />
+      </Main>
     </>
   );
 }
 
 export default HomePage;
+
+function Main({ children }: { children: React.ReactNode }) {
+  return <main className="_homeMainBody blur-xl">{children}</main>;
+}

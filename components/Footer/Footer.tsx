@@ -25,7 +25,7 @@ function Footer() {
 export default Footer;
 
 function Aside1() {
-  const [isOpenShop, setIsOpenShop] = useState<boolean>(true);
+  const [isOpenShop, setIsOpenShop] = useState<boolean>(false);
   const openShopRef = useRef<any>(!null);
 
   useClickAway(openShopRef, () => {
