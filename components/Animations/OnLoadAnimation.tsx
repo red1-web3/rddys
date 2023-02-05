@@ -3,8 +3,8 @@ import gsap, { Expo } from "gsap";
 import { slide2, sliderImageAndText } from "constant/home/hero";
 
 function preloadImages(urls: string[], allImagesLoadedCallback: () => void) {
-  var loadedCounter = 0;
-  var toBeLoadedNumber = urls.length;
+  let loadedCounter = 0;
+  let toBeLoadedNumber = urls.length;
   urls.forEach(function (url) {
     preloadImage(url, function () {
       loadedCounter++;
@@ -14,7 +14,7 @@ function preloadImages(urls: string[], allImagesLoadedCallback: () => void) {
     });
   });
   function preloadImage(url: string, anImageLoadedCallback: () => void) {
-    var img = new Image();
+    let img = new Image();
     img.onload = anImageLoadedCallback;
     img.src = url;
   }
