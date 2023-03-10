@@ -9,18 +9,18 @@ function Hero() {
   const [controller, setController] = useState<any>(null);
   const [controller2, setController2] = useState<any>(null);
   return (
-    <section>
-      <div className="h-[calc(100vh-60px)] lg:h-[80vh] grid lg:grid-cols-2">
-        <div className="relative">
+    <section className="relative">
+      <div className="grid lg:grid-cols-2">
+        <div className="relative h-[calc(100vh-60px)] lg:h-[80vh]">
           <SliderDemoImg setController={setController} />
           <SliderText setController={setController2} />
 
-          <div className="absolute top-0 left-0 w-full z-[60] lg:hidden flex items-center justify-between h-full">
+          {/* <div className="absolute top-0 left-0 w-full z-[60] flex items-center justify-between h-full">
             <PrevButton />
             <NextButton />
-          </div>
+          </div> */}
 
-          <div className="absolute top-0 z-[-1] left-0 ffc w-full h-full"></div>
+          <div className="absolute top-0 z-[-1] left-0 ffc h-screen w-full lg:h-full"></div>
         </div>
         <SliderMain controller={controller} controller2={controller2} />
       </div>

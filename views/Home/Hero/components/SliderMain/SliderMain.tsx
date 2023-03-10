@@ -18,8 +18,8 @@ function Slider2({
 }) {
   const hasC = controller && controller2;
   return (
-    <div className="lg:relative absolute w-px h-px lg:w-auto lg:h-auto m-[-1px] lg:m-0 overflow-hidden lg:overflow-auto whitespace-nowrap lg:whitespace-normal">
-      <div className="">
+    <div className="lg:relative">
+      <div className="sr-only lg:not-sr-only">
         <Swiper
           navigation={{
             nextEl: "#nextHeroSlide",
@@ -50,6 +50,7 @@ function Slider2({
           ))}
         </Swiper>
       </div>
+
       <div className="absolute top-1/2 z-[60] -translate-y-1/2 w-full flex justify-between">
         <PrevButton />
         <NextButton />

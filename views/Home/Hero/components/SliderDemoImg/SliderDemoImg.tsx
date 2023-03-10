@@ -12,7 +12,7 @@ function SliderDemoImg({ setController }: { setController: any }) {
       <Swiper
         onSwiper={setController}
         direction={"horizontal"}
-        className="mySwiper h-full"
+        className="mySwiper h-[70vh] lg:h-full !pointer-events-none"
         effect="cube"
         modules={[Controller, EffectCube]}
         cubeEffect={{
