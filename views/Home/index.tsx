@@ -25,5 +25,9 @@ function HomePage() {
 export default HomePage;
 
 function Main({ children }: { children: React.ReactNode }) {
-  return <main className="_homeMainBody blur-xl">{children}</main>;
+  return (
+    <main className="_homeMainBody blur-xl max-w-[100vh] overflow-x-hidden">
+      {children}
+    </main>
+  );
 }

@@ -31,7 +31,7 @@ function SliderDemoImg({
           prevEl: "#prevHeroSlide",
         }}
         direction={"horizontal"}
-        className="mySwiper h-[70vh] lg:h-full !pointer-events-none"
+        className="mySwiper h-[65vh] lg:h-full !pointer-events-none"
         effect="cube"
         modules={[Navigation, EffectCube, Controller]}
         cubeEffect={{
@@ -44,7 +44,10 @@ function SliderDemoImg({
         {sliderImageAndText.map(({ image }, i) => (
           <SwiperSlide key={i}>
             <div className="h-full w-full">
-              <Image {...image} className="object-cover rounded-xl" />
+              <Image
+                {...image}
+                className="object-cover rounded-xl overflow-hidden"
+              />
             </div>
           </SwiperSlide>
         ))}
