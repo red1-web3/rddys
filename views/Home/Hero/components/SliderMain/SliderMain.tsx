@@ -12,27 +12,17 @@ import PrevButton from "../Buttons/PrevButton";
 function Slider2({
   controller,
   controller2,
+  setController,
 }: {
   controller: any;
   controller2: any;
+  setController: any;
 }) {
-  const hasC = controller && controller2;
   return (
     <div className="lg:relative">
-      <div className="sr-only lg:not-sr-only">
+      <div className="hidden lg:block">
         <Swiper
-          navigation={{
-            nextEl: "#nextHeroSlide",
-            prevEl: "#prevHeroSlide",
-          }}
-          controller={
-            hasC
-              ? {
-                  control: [controller, controller2],
-                  by: "container",
-                }
-              : undefined
-          }
+          onSwiper={setController}
           modules={[Navigation, EffectFade, Controller]}
           effect={"fade"}
           className="mySwiper h-[80vh] w-full"
