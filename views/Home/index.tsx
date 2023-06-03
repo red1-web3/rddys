@@ -2,7 +2,6 @@ import OnLoadAnimation from "components/Animations/OnLoadAnimation";
 import React from "react";
 import FeaturedBrand from "./FeaturedBrand";
 import FeaturedProduct from "./FeaturedProduct";
-import GridImage from "./GridImage";
 import Hero from "./Hero";
 import InstagramFeed from "./InstagramFeed";
 import Products from "./Products";
@@ -26,7 +25,7 @@ export default HomePage;
 
 function Main({ children }: { children: React.ReactNode }) {
   return (
-    <main className="_homeMainBody blur-xl max-w-[100vh] overflow-x-hidden">
+    <main className="_homeMainBody blur-xl max-w-[100vw] overflow-x-hidden">
       {children}
     </main>
   );
