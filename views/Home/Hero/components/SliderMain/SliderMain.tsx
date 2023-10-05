@@ -9,15 +9,7 @@ import { slide2 } from "constant/home/hero";
 import NextButton from "../Buttons/NextButton";
 import PrevButton from "../Buttons/PrevButton";
 
-function Slider2({
-  controller,
-  controller2,
-  setController,
-}: {
-  controller: any;
-  controller2: any;
-  setController: any;
-}) {
+function Slider2({ setController }: { setController: any }) {
   return (
     <div className="lg:relative">
       <div className="hidden lg:block">

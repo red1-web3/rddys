@@ -1,10 +1,9 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { sliderImageAndText } from "constant/home/hero";
+import Image from "next/image";
 import { Controller, EffectCube, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-cube";
-import { sliderImageAndText } from "constant/home/hero";
-import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 function SliderDemoImg({
   controller,

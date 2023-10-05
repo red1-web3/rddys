@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import SliderDemoImg from "./components/SliderDemoImg";
 import SliderMain from "./components/SliderMain";
 import SliderText from "./components/SliderText";
@@ -15,11 +15,7 @@ function Hero() {
 
           <div className="absolute top-0 z-[-1] left-0 ffc h-screen w-full lg:h-full"></div>
         </div>
-        <SliderMain
-          controller={controller}
-          controller2={controller2}
-          setController={setController}
-        />
+        <SliderMain setController={setController} />
       </div>
 
       <div className="absolute top-0 left-0 w-full h-full z-[3]"></div>

@@ -1,11 +1,10 @@
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import "swiper/css";
-import "swiper/css/effect-fade";
-import { Controller, EffectFade } from "swiper";
 import { sliderImageAndText } from "constant/home/hero";
 import { SliderImageAndText } from "models/home/Hero";
+import { Controller, EffectFade } from "swiper";
+import "swiper/css";
+import "swiper/css/effect-fade";
 
 function SliderText({ setController }: { setController: any }) {
   return (
