@@ -1,3 +1,4 @@
+import Layout from "components/Layout/layout";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Head from "next/head";
@@ -12,7 +13,9 @@ export default function Home() {
         <title>RDDYS | Ecommerce webstore</title>
         <link rel="icon" href="/logo.svg" />
       </Head>
-      <HomePage />
+      <Layout>
+        <HomePage />
+      </Layout>
     </>
   );
 }

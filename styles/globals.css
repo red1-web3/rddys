@@ -149,3 +149,115 @@ body {
       calc(-2.3 * var(--s)) calc(1.7 * var(--s)), 0 0;
   }
 }
+
+.shape-8 {
+  width: 47em;
+  height: 119em;
+  background-color: #9fc68e;
+  border-radius: 999em;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  top: -17.1em;
+  left: 26.7em;
+  right: 0;
+  transform: rotate(29deg);
+}
+
+.shape-9 {
+  width: 30em;
+  height: 119em;
+  background-color: #1b1b1b;
+  border-radius: 999em;
+  position: absolute;
+  top: -5.3em;
+  right: 1.2em;
+  transform: rotate(39deg);
+}
+.shape-4 {
+  width: 65em;
+  height: 40em;
+  background-color: rgba(246, 199, 121, 0.6);
+  border-radius: 999em;
+  margin-left: auto;
+  position: absolute;
+  top: -11.3em;
+  left: 0;
+  transform: rotate(40deg);
+}
+
+.shape-5 {
+  width: 30em;
+  height: 30em;
+  background-color: #e7805b;
+  border-radius: 999em;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  top: -21.7em;
+  left: 0;
+  right: 0;
+}
+
+.shape-7 {
+  width: 20em;
+  height: 13em;
+  background-color: #b5a3d6;
+  border-radius: 999em;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  top: -4.1em;
+  left: 0;
+  right: -23.9em;
+  transform: rotate(40deg);
+}
+
+.shape-6 {
+  width: 66em;
+  height: 60em;
+  background-color: #a0bce0;
+  border-radius: 999em;
+  margin-left: auto;
+  position: absolute;
+  top: -14.2em;
+  right: -25em;
+  transform: rotate(60deg);
+  opacity: 0.77;
+}
+
+.shape-2 {
+  width: 43em;
+  height: 40em;
+  background-color: #b5a3d6;
+  border-radius: 999em;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  top: -20em;
+  left: -27.4em;
+  right: 0;
+}
+.shape-1 {
+  width: 40em;
+  height: 40em;
+  background-color: #a0bce0;
+  border-radius: 999em;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  top: -24.7em;
+  left: 0;
+  right: 0;
+}
+.shape-3 {
+  width: 53em;
+  height: 100em;
+  background-color: #b5a3d6;
+  border-radius: 999em;
+  position: absolute;
+  top: -19.8em;
+  left: -6em;
+  right: 0;
+  z-index: -1;
+}
